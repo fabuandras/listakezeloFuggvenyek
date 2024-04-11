@@ -1,94 +1,34 @@
 import { EMBEREK } from "./adat.js";
+import { megjelenit, tablazatLetrehoz } from "./fuggvenyek.js";
 
-function listaKiir() {
-    for (let index = 0; index < EMBEREK.length; index++) {
-        const element = EMBEREK[index];
-        console.log(element)
-        console.log(EMBEREK[index])  
-    }
-}
+/*
 
-listaKiir()
-
-/*const listaKiir2() {
-    for (let index = 0; index < LISTA.length; index++) {
-        const element = LISTA[index];
-        console.log(element)
-        console.log(LISTA[index])
-        
-    }
-}*/
-
-//listaKiir2()
-
-const listaKiir3= function() {
-    for (let index = 0; index < EMBEREK.length; index++) {
-        const element = EMBEREK[index];
-        console.log(element)
-        console.log(EMBEREK[index]) 
-    }
-}
-
-listaKiir3()
-
-function listaKiir4(){
-    EMBEREK.forEach(function (ember, i) {
-        console.log(ember) 
-    //LISTA.forEach(function (rokarudi, kismacsa) {
-        // console.log(rokarudi,kismacska)
-    //LISTA.forEach(function (elem, index) {
-       //     console.log(elem,index)  
-    });
-}
-
-listaKiir4()
-
-function idosebb30() {
-    const regebbMint30=EMBEREK.filter(function (ember) {
-        return ember.kor > 30; 
-    })
-    console.log(regebbMint30)
-}
-
-idosebb30()
-
-function ferfiak() {
-    const ferfiak = EMBEREK.filter(function (ember) {
-        return ember.nem 
-    })
-    console.log(ferfiak)
-}
-
-ferfiak()
-
-function ferfiak20evFelett() {
-    const ferfiak20= EMBEREK.filter(function (ember) {
-        return ember.nem &&ember.kor >=20; 
-        
-    })
-    console.log(ferfiak20)
-    
-}
-ferfiak20evFelett()
-
-function rendez() {
-    EMBEREK.sort(function (e1, e2) {
-        return e1.kor-e2.kor        
-    }) 
-    
-    console.log(EMBEREK)
-}
-
-rendez()
-
-function veletlen() {
-    EMBEREK.sort(function () {
-        return Math.random()-0.5        
-    }) 
-    
-    console.log(EMBEREK)
-}
-
-veletlen()
+Jelenítsük meg az adatainkat egy táblázatban.
+Az adatok div-ben, az urlap div-ben.
+Legyen egy űrlap, amivel ilyen adatokat tudunk a táblázatba beletenni, a táblázat fejlécére kattintva rendezzük a táblázatot a név szerint.
+Tudjunk törölni a táblázatból egy sort.
+Legyen egy szűrőmező, ami segítségével név szerint tudjuk szűrni az adatainkat.
 
 
+
+Milyen függvények kellenek?
+
+1. tablazatLetrehoz(lista) -> txt lista alapján készít html kódot, táblázatot,
+visszaadja az elkészült html szöveget, minden sor mellett egy törlés ikonnal.
+
+2. megjelenit(txt) - megjeleníti  a paraméterben kapott szöveget egy adott html elemben.
+
+3. rendez(lista) -> rlista - megrendezi a listát az adott paraméter szerint,
+a megrendezett listát visszaadja.
+Akkor fut le, amikor rákattintunk a táblázat fejlécére.
+
+4. szures(lista, keresoSzoveg) -> szurtLista - akkor fog lefutni,
+ha a szűrőmezőben változás történik (keyup) - a listában a név mezőben keres egyezéseket,
+és szűri a listát ez alapján - filter
+
+5. sorBeszur(lista) -> ujLista;
+
+*/
+
+let txt = tablazatLetrehoz(EMBEREK);
+megjelenit(txt)
